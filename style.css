@@ -1,0 +1,71 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+.container,
+.game-container{
+    margin-top:10vh;
+    padding:20px;
+}
+
+h1,h2,h3{
+    margin:15px 0;
+}
+
+input{
+    padding:15px;
+    font-size:18px;
+    width:80%;
+    max-width:300px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:15px 25px;
+    font-size:18px;
+    margin:10px;
+    border:none;
+    border-radius:12px;
+    background:#00c853;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00a844;
+}
+
+#tapBtn{
+    width:80%;
+    max-width:350px;
+    height:150px;
+    font-size:35px;
+    background:red;
+    border-radius:20px;
+}
+
+.info{
+    font-size:22px;
+    margin:15px;
+}
+
+/* 📱 mobile extra optimization */
+@media (max-width:600px){
+
+    #tapBtn{
+        height:180px;
+        font-size:40px;
+    }
+
+    button{
+        width:80%;
+        font-size:20px;
+    }
+
+}
