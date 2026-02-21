@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.gold{color:gold;font-weight:bold;}
+.silver{color:silver;font-weight:bold;}
+.bronze{color:#cd7f32;font-weight:bold;}
+
+li{
+font-size:22px;
+margin:8px 0;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🏆 Leaderboard</h1>
+
+<ul id="list"></ul>
+
+<button onclick="goBack()">Back</button>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="js/firebase.js"></script>
+
+<script>
+
+const list = document.getElementById("list");
+
+db.collection("scores")
+.orderBy("score","desc")
+.limit(20)
+.get()
+.then(snapshot=>{
+
+snapshot.forEach((doc,i)=>{
+
+let data = doc.data();
+let li = document.createElement("li");
+
+let medal="";
+
+if(i==0) medal="🥇 ";
+else if(i==1) medal="🥈 ";
+else if(i==2) medal="🥉 ";
+
+if(i==0) li.className="gold";
+if(i==1) li.className="silver";
+if(i==2) li.className="bronze";
+
+li.innerText = medal+(i+1)+". "+data.name+" — "+data.score;
+
+list.appendChild(li);
+
+});
+
+});
+
+function goBack(){
+window.location.href="game.html";
+}
+
+</script>
+
+</body>
+</html>

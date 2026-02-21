@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tap Speed Game</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="game-container">
+
+<h2 id="playerName"></h2>
+
+<div class="info">
+⏱ Time: <span id="time">5</span><br>
+🔥 Score: <span id="score">0</span>
+</div>
+
+<button id="tapBtn" onclick="tap()">TAP FAST!</button>
+
+<h3 id="result"></h3>
+
+<!-- countdown display -->
+<h1 id="countdown"></h1>
+
+<button onclick="startGame()">Start</button>
+<button onclick="goLeaderboard()">Leaderboard</button>
+<button onclick="shareScore()">Share Score</button>
+
+</div>
+
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<!-- Firebase Config -->
+<script src="js/firebase.js"></script>
+
+<!-- Game Logic -->
+<script src="js/game.js"></script>
+
+</body>
+</html>
